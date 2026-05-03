@@ -33,10 +33,32 @@ def main():
        collider="box",
    )
 
+   path = Entity(
+       model="plane",
+       color=color.black,
+       scale=(8, 0.05, 60),
+       position=(0, 0.03, -30),
+       collider="box",
+   )
+
+   cross1 = Entity(
+       model="plane",
+       color=color.black,
+       scale=(60, 0.05, 8),
+       position=(0, 0.11, -40),
+   )
+
+   cross2 = Entity(
+       model="plane",
+       color=color.black,
+       scale=(60, 0.05, 8),
+       position=(0, 0.11, -20),
+   )
 
    player = FirstPersonController()
-   player.position = (0, 2, 0)
-
+   player.position = (0, 2, 4)
+   player.speed = 40
+   player.look_at_2d(path, "y")
 
    player.cursor.enabled = False
 
