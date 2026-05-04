@@ -7,6 +7,7 @@ loadPrcFileData("", "win-size 1500 800")
 from ursina import Ursina, Entity, Sky, color, application
 from ursina.window import instance as window
 from ursina.prefabs.first_person_controller import FirstPersonController
+from ursina.shaders import unlit_shader
 
 
 
@@ -54,6 +55,16 @@ def main():
        scale=(60, 0.05, 8),
        position=(0, 0.11, -20),
    )
+
+   building = Entity(
+       model="cube",
+       color=color.gray,
+       scale=(5, 20, 10),
+       position=(8, 10.08, -30),
+       collider="box",
+       shader=unlit_shader,
+   )
+
 
    player = FirstPersonController()
    player.position = (0, 2, 4)
